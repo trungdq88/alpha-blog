@@ -1,6 +1,9 @@
-<h1>Article details</h1>
+<div class="container">
+  <h1 class="mt-5"><%=@article.title%><br/></h1>
 
-Title: <%=@article.title%><br/>
-Description: <%=@article.description%><br/>
+  <article class="mb-5">
+    <%=@article.description%><br/>
+  </article>
 
-<%= link_to 'Show all articles', articles_path %>
+  <%= link_to 'Show all articles', articles_path %>
+</div>
