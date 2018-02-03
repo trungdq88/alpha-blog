@@ -1,13 +1,4 @@
-<% if @article.errors.any? %>
-  <div class="alert alert-danger">
-    <ul class="mb-0">
-      <% @article.errors.full_messages.each do |msg| %>
-        <li><%=msg%></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
+<%= render 'shared/model_error', obj: @article %>
 <%= form_for @article, html: { class: 'form-group' } do |f| %>
   <p>
   <%= f.label :title %>
