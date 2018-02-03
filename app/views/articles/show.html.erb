@@ -1,6 +1,15 @@
 <div class="container">
   <h1 class="mt-5"><%=@article.title%><br/></h1>
 
+  <div class="well">
+    <small>
+      <%= @article.user.username if @article.user %>,
+      <%= time_ago_in_words(@article.updated_at) %>
+    </small>
+  </div>
+
+  <hr />
+
   <article class="mb-5">
     <%=@article.description%><br/>
   </article>
