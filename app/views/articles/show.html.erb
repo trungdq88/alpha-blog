@@ -3,7 +3,8 @@
 
   <div class="well">
     <small>
-      <%= @article.user.username if @article.user %>,
+      <%= link_to(@article.user.username, user_path(@article.user)) if
+      @article.user %>,
       <%= time_ago_in_words(@article.updated_at) %>
     </small>
   </div>

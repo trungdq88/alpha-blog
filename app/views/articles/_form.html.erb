@@ -9,7 +9,8 @@
   <%= f.text_area :description, class: 'form-control' %>
   </p>
   <p>
-  <%= f.submit 'Create', class: 'btn btn-primary btn-success' %>
+  <%= f.submit @article.new_record? ? 'Create' : 'Update',
+    class: 'btn btn-primary btn-success' %>
   </p>
 <% end %>
 

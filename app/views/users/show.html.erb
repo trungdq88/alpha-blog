@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="mt-5 text-center"><%= @user.username %>'s page</h1>
+  <div class="text-center">
+    <%= image_tag gavatar_for(@user, size: 150),
+      alt: @user.username + "'s avatar", class: 'rounded-circle' %>
+  </div>
+  <h1 class="mt-5 text-center">Articles</h1>
+
+  <%= render 'articles/article_list', articles: @user.articles %>
+</div>
