@@ -3,6 +3,11 @@
   <div class="text-center">
     <%= gavatar_for(@user, size: 150) %>
   </div>
+  <% if logged_in? && current_user === @user %>
+    <p align="center" class="mt-3">
+    <%= link_to 'Edit profile', edit_user_path(@user) %>
+    </p>
+  <% end %>
   <h1 class="mt-5">Articles</h1>
 
   <%= render 'articles/article_list', articles: @user_articles %>
