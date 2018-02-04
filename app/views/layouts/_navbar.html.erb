@@ -26,7 +26,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <% if logged_in? %>
-        Welcome, <%= link_to current_user.username, user_path(current_user) %>
+        Welcome <%= 'Admin' if current_user.admin? %>, <%= link_to current_user.username, user_path(current_user) %>
         <%= link_to 'Logout', logout_path, class: 'nav-link', method: 'delete' %>
       <% else %>
         <%= link_to 'Login', login_path, class: 'nav-link' %>

@@ -3,7 +3,7 @@
   <div class="text-center">
     <%= gavatar_for(@user, size: 150) %>
   </div>
-  <% if logged_in? && current_user === @user %>
+  <% if logged_in? && (current_user === @user || current_user.admin?) %>
     <p align="center" class="mt-3">
     <%= link_to 'Edit profile', edit_user_path(@user) %>
     </p>
