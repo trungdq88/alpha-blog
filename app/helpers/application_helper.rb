@@ -5,4 +5,8 @@ module ApplicationHelper
     url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag url, alt: user.username + "'s avatar", class: 'rounded-circle'
   end
+
+  def bootstrap_paginate(items)
+    will_paginate items, renderer: WillPaginate::ActionView::BootstrapLinkRenderer
+  end
 end

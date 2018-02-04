@@ -5,5 +5,6 @@
   </div>
   <h1 class="mt-5">Articles</h1>
 
-  <%= render 'articles/article_list', articles: @user.articles %>
+  <%= render 'articles/article_list', articles: @user_articles %>
+  <%= bootstrap_paginate @user_articles %>
 </div>
