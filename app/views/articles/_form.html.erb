@@ -9,9 +9,18 @@
   <%= f.text_area :description, class: 'form-control' %>
   </p>
   <p>
+  <%= f.label :categories %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+    <div class="custom-control custom-checkbox custom-control-inline">
+      <%= cb.check_box(class: 'custom-control-input') %>
+      <%= cb.label(class: 'custom-control-label') { cb.text } %>
+    </div>
+  <% end %>
+  </p>
+  <p>
   <%= f.submit @article.new_record? ? 'Create' : 'Update',
     class: 'btn btn-primary btn-success' %>
-  </p>
+</p>
 <% end %>
 
 <%= link_to 'Show all articles', articles_path %>

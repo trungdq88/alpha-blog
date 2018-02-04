@@ -3,6 +3,7 @@
     <th>Title</th>
     <th>Creator</th>
     <th>Last updated</th>
+    <th>Categories</th>
     <th colspan="2">Action</th>
   </tr>
   <% articles.each do |article| %>
@@ -11,6 +12,7 @@
       <td><%= link_to(article.user.username, user_path(article.user)) if
       article.user %></td>
       <td><%= time_ago_in_words(article.updated_at) %></td>
+      <td><%= render article.categories %></td>
       <% if logged_in? &&
            (current_user === article.user || current_user.admin?) %>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
