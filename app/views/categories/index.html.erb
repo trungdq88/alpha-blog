@@ -8,11 +8,13 @@
   <table class="table table-border">
     <tr>
       <th>Title</th>
+      <th>Articles</th>
       <th>Created</th>
     </tr>
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.name, category_path(category) %></td>
+        <td><%= pluralize(category.articles.length, 'article') %></td>
         <td><%= time_ago_in_words(category.updated_at) %></td>
       </tr>
     <% end %>

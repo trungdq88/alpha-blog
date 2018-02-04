@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="mt-5 text-center"><%= @category.name %></h1>
+  <div class="text-center">
+    <%= pluralize(@category.articles.length, 'article') %>
+  </div>
+  <h1 class="mt-5">Articles</h1>
+  <%= render 'articles/article_list', articles: @category_articles %>
+  <%= bootstrap_paginate @category_articles %>
+</div>
