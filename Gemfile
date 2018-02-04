@@ -25,6 +25,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bcrypt', '~> 3.1.11'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap4'
+gem 'rails-controller-testing'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

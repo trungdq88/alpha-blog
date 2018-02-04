@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="mt-5">New Category</h1>
+  <%= render 'shared/model_error', obj: @category %>
+  <%= form_for @category, html: { class: 'form-group' } do |f| %>
+    <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    </p>
+    <p>
+    <%= f.submit 'Create', class: 'btn btn-primary btn-success' %>
+    </p>
+  <% end %>
+</div>

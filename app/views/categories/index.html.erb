@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="mt-5">All categories</h1>
+
+  <div class="text-right mb-5">
+    <%= link_to 'New category', new_category_path, class: 'btn btn-primary' %>
+  </div>
+
+  <table class="table table-border">
+    <tr>
+      <th>Title</th>
+      <th>Created</th>
+    </tr>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category_path(category) %></td>
+        <td><%= time_ago_in_words(category.updated_at) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= bootstrap_paginate @categories %>
+
+</div>
+
